@@ -1,3 +1,5 @@
+// 'use client'
+
 // utils/localStorage.js
 
 // Function to save state to localStorage

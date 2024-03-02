@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { updateUser, addTask } from '../store/userSlice';
+import { updateUser } from '../store/userSlice';
 
 export default function UserForm() {
   const dispatch = useDispatch();

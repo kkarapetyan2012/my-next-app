@@ -26,7 +26,7 @@
 //   );
 // }
 
-
+// 'use client'
 // pages/index.js
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -81,9 +81,9 @@ export default function Home({ initialUsers }) {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <ul>
+      <ul className='user-list'>
         {!searchQuery ? filteredItems.map(user => (
-          <li key={user.id}>
+          <li className='user-item' key={user.id}>
             {user.name} {user.lastName} - {user.email} - {user.phone} - {user.address}
             <button onClick={() => dispatch(deleteUser(user.id))}>Delete</button>
             <Link href={`/users/${user.id}`}>
