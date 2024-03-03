@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 // utils/localStorage.js
 
@@ -10,10 +10,10 @@ export const saveState = (state) => {
     } catch (err) {
       console.error("Could not save state", err);
     }
-  };
+};
   
-  // Function to load state from localStorage
-  export const loadState = () => {
+// Function to load state from localStorage
+export const loadState = () => {
     try {
       const serializedState = localStorage.getItem('state');
       if (serializedState === null) {
@@ -23,5 +23,5 @@ export const saveState = (state) => {
     } catch (err) {
       return undefined;
     }
-  };
+};
   

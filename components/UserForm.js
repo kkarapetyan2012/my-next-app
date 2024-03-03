@@ -1,3 +1,4 @@
+'use client'
 // components/UserForm.js
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -46,15 +47,22 @@ const UserForm = ({ existingUser }) => {
     // Reset form or give feedback
   };
 
+  const handleCancel = () => {
+    router.push('/')
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name" value={userData.name} onChange={handleChange} placeholder="Name" />
-      <input type="text" name="lastName" value={userData.lastName} onChange={handleChange} placeholder="Last Name" />
-      <input type="email" name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
-      <input type="tel" name="phone" value={userData.phone} onChange={handleChange} placeholder="Phone" />
-      <input type="text" name="address" value={userData.address} onChange={handleChange} placeholder="Address" />
-      <button type="submit">Submit</button>
-    </form>
+    <div className='' style={{width: 320, padding: 12}}>
+        <form style={{width: '100%'}} onSubmit={handleSubmit}>
+            <input style={{marginBottom: 12, width: '100%'}} type="text" name="name" value={userData.name} onChange={handleChange} placeholder="Name" />
+            <input style={{marginBottom: 12, width: '100%'}} type="text" name="lastName" value={userData.lastName} onChange={handleChange} placeholder="Last Name" />
+            <input style={{marginBottom: 12, width: '100%'}} type="email" name="email" value={userData.email} onChange={handleChange} placeholder="Email" />
+            <input style={{marginBottom: 12, width: '100%'}} type="tel" name="phone" value={userData.phone} onChange={handleChange} placeholder="Phone" />
+            <input style={{marginBottom: 12, width: '100%'}} type="text" name="address" value={userData.address} onChange={handleChange} placeholder="Address" />
+            {existingUser && <button style={{marginBottom: 12, width: '100%'}} type="button" onClick={handleCancel}>Cancel</button>}
+            <button style={{marginBottom: 12, width: '100%'}} type="submit">Submit</button>
+        </form>
+    </div>
   );
 };
 

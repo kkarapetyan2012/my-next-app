@@ -34,6 +34,7 @@ import StoreProvider from "./StoreProvider";
 // import store from '../store/store';
 
 function MyApp({ Component, pageProps }) {
+  
   return (
     <StoreProvider >
       <Component {...pageProps} />
