@@ -24,4 +24,14 @@ export const loadState = () => {
       return undefined;
     }
 };
-  
+
+// utils/localStorage.js
+export function getInitialUsers() {
+    if (typeof window !== 'undefined') {
+      const storedUsers = localStorage.getItem('users');
+      if (storedUsers) {
+        return JSON.parse(storedUsers);
+      }
+    }
+    return [];
+}
